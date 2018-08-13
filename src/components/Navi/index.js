@@ -5,7 +5,13 @@ class Navi extends React.Component {
   render() {
     const { location, title } = this.props
     return (
-      <nav className="navbar navbar-expand navbar-dark flex-column flex-md-row bg-primary">
+      <nav
+        className={
+          location.pathname === '/'
+            ? 'navbar navbar-expand navbar-dark flex-column flex-md-row bg-transparent text-white'
+            : 'navbar navbar-expand navbar-dark flex-column flex-md-row bg-primary'
+        }
+      >
         <div className="container">
           <Link className="text-center" to="/">
             <h1 className="navbar-brand mb-0">{title}</h1>
@@ -23,13 +29,57 @@ class Navi extends React.Component {
               </li>
               <li
                 className={
-                  location.pathname === '/profile/'
+                  location.pathname === '/about/'
                     ? 'nav-item active'
                     : 'nav-item'
                 }
               >
-                <Link to="/profile/" className="nav-link">
-                  Profile
+                <Link to="/about/" className="nav-link">
+                  About
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === '/blog/'
+                    ? 'nav-item active'
+                    : 'nav-item'
+                }
+              >
+                <Link to="/blog/" className="nav-link">
+                  Blog
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === '/project/'
+                    ? 'nav-item active'
+                    : 'nav-item'
+                }
+              >
+                <Link to="/project/" className="nav-link">
+                  Project
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === '/teaching/'
+                    ? 'nav-item active'
+                    : 'nav-item'
+                }
+              >
+                <Link to="/teaching/" className="nav-link">
+                  Teaching
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === '/contact/'
+                    ? 'nav-item active'
+                    : 'nav-item'
+                }
+              >
+                <Link to="/contact/" className="nav-link">
+                  Contact
                 </Link>
               </li>
             </ul>

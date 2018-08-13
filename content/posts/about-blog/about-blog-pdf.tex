@@ -1,0 +1,25 @@
+% !TEX TS-program = XeLaTeX
+\documentclass[11pt,a4paper]{article}
+
+\input{../preamble}
+\begin{document}
+\noindent{\sffamily\firstHeaderL \hfill \firstHeaderR}
+\vspace{5pt}
+\noindent\rule[2ex]{\columnwidth}{0.5pt}
+\newcommand{\docTitle}{Migrating to Gatsby.js}
+\newcommand{\docDate}{August 13, 2018 01:48:39PM}
+\newcommand{\docURL}[1]{\url{https://kentchang.com/#1/}}
+
+\title{\LARGE\sffamily{\docTitle}
+\author{\authorInfo}
+\date{\docDate}
+{\let\newpage\relax\maketitle}
+\vspace*{0.5em}
+\noindent \textsc{url}: \docURL{about-blog}
+
+\noindent\hrulefill
+
+\input{about-blog-content.tex}
+\printbibliography
+
+\end{document}

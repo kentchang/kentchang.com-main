@@ -1,12 +1,15 @@
+const _ = require('lodash')
 const each = require('lodash/each')
 const Promise = require('bluebird')
 const path = require('path')
-const PostTemplate = path.resolve('./src/templates/index.js')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
+    const PostTemplate = path.resolve('./src/templates/Post.js')
+    const TagTemplate = path.resolve('./src/templates/Tag.js')
+    // const TagTemplate = path.resolve('./src/templates/Tag/index.js')
     resolve(
       graphql(
         `
@@ -20,8 +23,8 @@ exports.createPages = ({ graphql, actions }) => {
                   remark: childMarkdownRemark {
                     id
                     frontmatter {
-                      layout
-                      path
+                      slug
+                      tags
                     }
                   }
                 }
@@ -35,26 +38,38 @@ exports.createPages = ({ graphql, actions }) => {
           reject(errors)
         }
 
-        // Create blog posts & pages.
         const items = data.allFile.edges
         const posts = items.filter(({ node }) => /posts/.test(node.name))
+
         each(posts, ({ node }) => {
           if (!node.remark) return
-          const { path } = node.remark.frontmatter
+          const { slug } = node.remark.frontmatter
           createPage({
-            path,
+            path: '/blog/' + slug + '/',
             component: PostTemplate,
+            context: {
+              slug: node.remark.frontmatter.slug,
+            },
           })
         })
 
-        const pages = items.filter(({ node }) => /page/.test(node.name))
-        each(pages, ({ node }) => {
+        let allTags = []
+
+        each(posts, ({ node }) => {
           if (!node.remark) return
-          const { name } = path.parse(node.path)
-          const PageTemplate = path.resolve(node.path)
-          createPage({
-            path: name,
-            component: PageTemplate,
+
+          const { tags } = node.remark.frontmatter
+          allTags = allTags.concat(tags)
+          allTags = _.uniq(allTags)
+
+          allTags.forEach(tag => {
+            createPage({
+              path: '/blog/tag/' + tag + '/',
+              component: TagTemplate,
+              context: {
+                tag: tag,
+              },
+            })
           })
         })
       })

@@ -1,39 +1,17 @@
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import React from 'react'
-
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {
-  faApple,
-  faAws,
-  faFacebook,
-  faGithub,
-  faHtml5,
-  faJs,
-  faNode,
-  faPhp,
-  faReact,
-  faTwitter,
-  faVuejs,
+  faFacebookSquare,
+  faTwitterSquare,
 } from '@fortawesome/free-brands-svg-icons'
-import './style.scss'
 
-library.add(
-  faApple,
-  faAws,
-  faFacebook,
-  faGithub,
-  faHtml5,
-  faJs,
-  faNode,
-  faPhp,
-  faReact,
-  faTwitter,
-  faVuejs
-)
+library.add(faTwitterSquare, faFacebookSquare, faEnvelope)
 
-const Icon = ({ name }) => (
+const Icon = ({ prefix, name, className }) => (
   <div className="icon" title={name}>
-    <FontAwesomeIcon icon={['fab', name]} />
+    <FontAwesomeIcon icon={[prefix, name]} className={className} />
   </div>
 )
 

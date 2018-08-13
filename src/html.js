@@ -21,7 +21,11 @@ export default class HTML extends React.Component {
             rel="apple-touch-icon"
             sizes="180x180"
           />
-          <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+          <script
+            async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+          />
+          {/* <link href="/img/favicon.ico" rel="icon" type="image/x-icon" /> */}
         </head>
         <body>
           <div
@@ -29,10 +33,6 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script
-            async
-            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          />
         </body>
       </html>
     )

@@ -1,0 +1,1 @@
+pandoc intro.tex -o intro.md --bibliography ../docs/course-2.bib && pandoc -t markdown_strict --filter=pandoc-citeproc --standalone --bibliography ../docs/course-2.bib intro.md -o intro-out.md

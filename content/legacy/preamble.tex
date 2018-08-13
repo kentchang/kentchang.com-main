@@ -1,0 +1,161 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\makeatletter
+%\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+%\begin{flushleft}
+%  \@title
+%
+%  \@author
+%\end{flushleft}\egroup
+%}
+%\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Font and typography 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% LetterSpace=10
+
+% Font
+\usepackage{microtype}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX,%
+	Numbers=OldStyle,%
+	BoldFont={* Semibold},%
+	UprightFeatures={%
+	SmallCapsFeatures={Letters=SmallCaps,LetterSpace=7},%
+	},%
+	BoldFeatures={%
+	SmallCapsFeatures={Letters=SmallCaps,LetterSpace=7},%
+	},%
+	]{Garamond Premier Pro}
+
+
+
+\setsansfont[%
+	BoldFont={* Semibold}, %
+	UprightFeatures={%
+	SmallCapsFont={Acumin Pro Medium},%
+	SmallCapsFeatures={Letters=SmallCaps,LetterSpace=10},%
+	},%
+	BoldFeatures={%
+	SmallCapsFont={Acumin Pro Bold},%	
+	SmallCapsFeatures={Letters=SmallCaps,LetterSpace=10},%
+	},%
+	Scale=0.82]{Acumin Pro}
+
+\setmonofont[Scale=0.85]{Source Code Pro}
+
+\newcommand\tracked[1]{%
+  {\addfontfeature{LetterSpace=10}#1}}
+  
+\newcommand{\allcaps}[1]{%
+  {\addfontfeatures{LetterSpace=10}\MakeUppercase{#1}}%
+}  
+
+
+% Spacing
+
+\usepackage{setspace}
+\onehalfspacing % 130% spacing between lines: http://texblog.org/2011/09/30/quick-note-on-line-spacing/
+\setlength{\parskip}{0.25\baselineskip}
+\setlength\parindent{0pt} % indentation
+
+
+% Titles
+%
+%\usepackage[sc,small,raggedright,compact]{titlesec}
+%\titleformat{\section}%
+%	{\sffamily\bfseries}%
+%	{}%
+%	{}%
+%	{\addfontfeatures{LetterSpace=10}%
+%		\MakeUppercase}
+%\titleformat*{\subsection}{\scshape\lowercase}
+%\newcommand{\periodafter}[1]{#1.}
+%\titleformat{\subsubsection}[runin]%
+%    {\itshape}{\thesubsubsection}{0pt}{\periodafter}
+
+% URL
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+  pdftitle={Cultural and Literary Text Mining: General Information},
+  pdfauthor={Kent K. Chang},
+  bookmarks, bookmarksopen,
+  colorlinks=true,urlcolor=blue,citecolor=BlueViolet,
+  xetex]{hyperref}
+%\urlstyle{same}
+
+% Misc
+
+\usepackage[english]{babel}
+\usepackage{xunicode}
+\usepackage{xltxtra} 
+\usepackage{hanging}
+\usepackage{fancybox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{xkeyval}
+\usepackage{enumitem}
+\setitemize[1]{label=\raisebox{0.25ex}{\tiny$\bullet$}}
+
+\setitemize[2]{leftmargin=0.4cm,label=\raisebox{0.25ex}{\tiny$\circ$}}
+
+\usepackage{multicol}
+
+% Margin, space, etc.
+
+\usepackage[lmargin=1.2in,rmargin=1.2in]{geometry} % wider margins
+\geometry{hcentering=true,xetex}
+
+% header, footer
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\footrulewidth}{0 pt} % I don't like fancyhdr's rules.
+\renewcommand{\headrulewidth}{0 pt}
+\fancyhead{}
+\fancyhead[LO]{\small {\scshape \runningHeaderL}}
+\fancyhead[CO]{\small }
+\fancyhead[RO]{\small \runningHeaderR}
+\fancyfoot{}
+\cfoot{\small \thepage}
+% VCDateUSA macro supplied in tweaked vc-git.awk
+\rfoot{\small Last revised: \today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% accomodating biblatex-chicago
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Some tweaks necessary to ensure annotations print at the end of 
+% bibliography entries.
+\usepackage{csquotes}
+\usepackage[authordate,strict,backend=biber,autolang=other,bibencoding=inputenc,booklongxref=false,compresspages,doi=false,isbn=false,url=false,cmsdate=both]{biblatex-chicago}
+\DeclareFieldFormat{annotation}{#1\isdot}
+%\usepackage{usebib}
+
+% Swaps biblatex-chicago's default for \autocite from \footcite to \cite.
+% This way, when pandoc converts [@key] citations to \autocite, you'll
+% get inline (short) citations.
+\DeclareAutoCiteCommand{footnote}{\cite}{\cites}
+
+% Bibliography will print \small
+\renewcommand{\bibfont}{\small}
+
+\addbibresource{../../docs/course-2.bib}
+
+
+\setcounter{secnumdepth}{-2}	% Suppress section numbers even with unstarred
+				% (sub)section commands.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{cancel} 
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{xifthen}
+\usepackage{tcolorbox}

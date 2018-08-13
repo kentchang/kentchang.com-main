@@ -1,16 +1,17 @@
+////////////////////////////////////////
+// Variables
+////////////////////////////////////////
+
 // Colors
-//
 // Grayscale and brand colors for use across Bootstrap.
 
 // Start with assigning color names to specific hex values.
-//
 // Color system
-//
 @import './colors.scss';
 
 // Reassign color vars to semantic color scheme
 $theme-colors: (
-  primary: $purple,
+  primary: $black,
   secondary: $gray-600,
   success: $green,
   info: $cyan,
@@ -21,7 +22,6 @@ $theme-colors: (
 ) !default;
 
 // Options
-//
 // Quickly modify global styling by enabling or disabling optional features.
 $enable-rounded: true !default;
 $enable-shadows: true !default;
@@ -32,7 +32,6 @@ $enable-grid-classes: true !default;
 $enable-print-styles: true !default;
 
 // Grid containers
-//
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
@@ -43,7 +42,6 @@ $container-max-widths: (
 ) !default;
 
 // Body
-//
 // Settings for the `<body>` element.
 
 $body-bg: $white !default;
@@ -52,15 +50,16 @@ $inverse-bg: $gray-900 !default;
 $inverse-color: $gray-600 !default;
 
 // Links
-//
 // Style anchor elements.
 $link-decoration: none !default;
 $link-hover-decoration: none !default;
 
-// Fonts
-//
-@import './fonts.scss';
+////////////////////////////////////////
+// General
+////////////////////////////////////////
 
+// Fonts
+@import './fonts.scss';
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
 html,
@@ -75,9 +74,15 @@ body {
 }
 
 p {
-  font-size: 16px;
+  font-size: 1.2rem;
+  color: #000;
   line-height: 1.5;
   margin-bottom: 20px;
+  padding-top: 5px;
+  .lead {
+    font-family: $font-family-sans-serif;
+    color: #000;
+  }
 }
 
 img {
@@ -85,6 +90,511 @@ img {
   max-width: 100%;
 }
 
-img:hover {
-  animation: pulse 0.5s;
+code {
+  font-size: 80%;
+}
+
+.sc {
+  text-transform: uppercase;
+  font-size: 75%;
+  letter-spacing: 2pt;
+  &::after {
+    content: '';
+    margin-right: -2pt;
+  }
+}
+
+.email-domain::before {
+  content:'@';
+}
+
+// img:hover {
+//   animation: pulse 0.5s;
+// }
+
+////////////////////////////////////////
+// navbar
+////////////////////////////////////////
+
+.navbar {
+  z-index: 1;
+  h1 {
+      text-transform: uppercase;
+      letter-spacing: 1.5pt;
+  }
+  
+  .navbar-nav .active > .nav-link {
+      border-bottom: 3px solid #eee;
+      padding-bottom: 0px;
+      margin-bottom: -5px;
+  }
+}
+
+///////////////////////////
+// mixins
+//////////////////////////
+
+@mixin wrapper_margin() {
+  margin-bottom: 8rem;
+}
+@mixin link() {
+  a:not(.btn):not(.badge) {
+    color: $indigo;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin button_groups($top) {
+  .button_group {
+    margin: $top 0 1rem 0;
+    a {
+        margin-right: 0.5rem;
+    }
+  }
+}
+
+@mixin card() {
+  .card {
+    .card-header {
+      h3 {
+        text-transform: uppercase;
+        letter-spacing: 2pt;
+        margin-bottom: 0;
+      }
+    }
+    .card-body {
+      h4 {
+        font-size: 1.4rem;
+      }
+      .links {
+        margin: 0.5rem 0 1rem 0;
+      }
+      a:not(.btn) {
+        color: $indigo;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .card-footer {
+      small {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@mixin blog_components() {
+  @include link();
+  .info {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $gray-200;
+    word-break: break-word;
+
+    .title {
+      display: block;
+      letter-spacing: -0.5px;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-family: inherit;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .badge {
+      margin-right: 3px;
+    }
+
+    time {
+      font-size: $font-size-xs;
+      color: $gray-500;
+      display: inline;
+      margin-right: 10px;
+    }
+  }
+  .content {
+    padding-bottom: 10px;
+    
+
+    h2 {
+      padding-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      @include paragraph();
+    }
+
+    ul > li {
+      @include paragraph();
+    }
+
+    blockquote {
+      background-color: $gray-100;
+      border-left: 5px solid $gray-200;
+      padding: 0.25em 1.5em;
+
+      a {
+        display: block;
+        word-break: break-word;
+      }
+    }
+  }
+}
+
+@mixin page_heading1() {
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2pt;
+  text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+
+  &::before { // , &::after {
+    content: "§";
+    display: inline-block;
+    -webkit-transform: rotate(112deg);
+    -moz-transform: rotate(112deg);
+    -o-transform: rotate(112deg);
+    -ms-transform: rotate(112deg);
+    transform: rotate(112deg);
+    opacity: 0.4;
+    margin: 0 0.6em;
+    font-size: 0.8em;
+  }
+}
+
+@mixin page_heading2() {
+  font-weight: 300;
+  font-size: 1.8rem;
+  font-family: $font-family-sans-serif;
+  margin: 10px 0;
+}
+
+@mixin paragraph() {
+  font-family: $font-family-serif;
+  font-size: 1.3rem;
+}
+
+///////////////////////////
+// home
+///////////////////////////
+
+.home {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  background: url('/img/home.jpg') no-repeat left center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height: 100vh;
+  width: 100%;
+  font-size: 116%;
+  
+  h1 {
+    background-image: url('/img/kent-k-chang.svg'); 
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    // background-size: cover;
+    width: 90%;
+    height: 40vh;
+    margin-bottom: 5vh;
+    // padding: 0; /* reset */
+    // padding-bottom: calc(100% * 281 / 762);
+
+  }
+  p {
+    color: #FFF;
+  }
+
+  @media (min-width: 768px){
+    h1 {
+      width: 130%;
+    }
+    .home-info {
+      padding-left: 30%;
+    }
+
+  }
+}
+
+
+
+//////////////////////////////////
+// Blog
+//////////////////////////////////
+
+.sidebar {
+  display: none;
+  // position: relative;
+  // margin: 5rem 2rem 2rem 2rem;
+  // min-width: 100%;
+
+  .card-header {
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    font-weight: 600;
+    font-size: 85%;
+  }
+  .card-body {
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+    a:not(.badge) {
+      color: $indigo;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  iframe {
+    margin: -10px;
+  }
+  a {
+    margin-right: 5px;
+  }
+  
+  @media (min-width: 768px){
+    display: block;
+    // min-width: 10rem;
+    max-width: 12rem;
+    position: -webkit-sticky;
+    position: sticky;
+    margin: 3rem 5rem 2rem 2rem;
+  }
+}
+
+.blog {
+  margin-bottom: 8rem;
+  &-index {
+
+  }
+  &-tag {
+    &-header {
+     h1 {
+      @include link();
+      @include page_heading2();
+     } 
+     @media (min-width: 768px){
+      padding: 0 0 0 12rem;
+      margin: -0.5rem 0 -1rem;
+     }
+    }
+  }
+  &-post {
+    @include blog_components();
+    .breadcrumb {
+      margin: 2rem 0 0.5rem 0; // 3rem;
+      a {
+        color: $indigo;
+        :hover {
+          text-decoration: underline;
+        }
+      }
+      .breadcrumb-item {
+        color: $indigo;
+        & ::before {
+          content: '« ';
+          color: $indigo;
+        }
+      }
+    }
+  }
+  &-header {
+    h1 {
+      @include page_heading1();
+      margin-bottom: -0.2em;
+      &::after {
+        content: ' /  ';
+        font-weight: 300;
+      }
+    }
+    h2 {
+      display: inline;
+      font-weight: 200;
+      font-size: 2.5rem;
+      // margin-top: -18px;
+      // margin-left: 2.5rem;
+      color: #000;
+    }
+    @media (min-width: 768px){
+      padding: 0 0 0 12rem;
+    }
+  }
+  &-article {
+    padding: 3rem 0 1rem 0;
+    @include blog_components();
+
+    @media (min-width: 768px){
+      padding: 3rem 0 1rem 12rem;
+    }
+  }
+
+
+}
+
+////////////////////////////////////////
+// About
+////////////////////////////////////////
+
+.about {
+  @include wrapper_margin();
+  @include link();
+  @include button_groups(-1rem);
+
+  h1 {
+    @include page_heading1();
+    margin-left: -1.6em;
+    padding-bottom: 1.5em;
+  }
+  h2 {
+    @include page_heading2();
+  }
+  p {
+    @include paragraph();
+  }
+  .kent-picture {
+      margin: -5rem -5rem 0 2rem;
+      width: 35%;
+      height: 35%;
+  }
+}
+
+////////////////////////////////////////
+// Project
+////////////////////////////////////////
+
+.project {
+  @include wrapper_margin();
+  @include link();
+  @include card();
+  @include button_groups(0);
+
+  h1 {
+    @include page_heading1();
+    margin-left: -1.6em;
+    padding-bottom: 1.5em;
+  }
+  h2 {
+    @include page_heading2();
+  }
+  p {
+    @include paragraph();
+  }
+}
+
+////////////////////////////////////////
+// Teaching
+////////////////////////////////////////
+
+.teaching {
+  @include wrapper_margin();
+  @include link();
+  @include card();
+  @include button_groups(0);
+
+  h1 {
+    @include page_heading1();
+    margin-left: -1.6em;
+    padding-bottom: 1.5em;
+  }
+  h2 {
+    @include page_heading2();
+  }
+  p {
+    @include paragraph();
+  }
+}
+
+
+////////////////////////////////////////
+// Contact
+////////////////////////////////////////
+
+.contact {
+  @include link();
+
+  h1 {
+    @include page_heading1();
+    margin-left: -1.6em;
+    padding-bottom: 1.5em;
+  }
+  h2 {
+    @include page_heading2();
+  }
+  p {
+    @include paragraph();
+  }
+}
+
+////////////////////////////////////////
+// Footer
+////////////////////////////////////////
+
+.footer {
+  hr {
+    border-color: $red;
+    border-width: 3px;
+    max-width: 50px;
+  }
+  img {
+    margin: 0px 0 0 2px;
+  }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.footer-home {
+  position: absolute;
+}
+
+// .contact-links {
+//   vertical-align: middle;
+// }
+
+.icon {
+  max-width: 30px;
+  display: inline;
+  margin: 0px 2px 0;
+
+  svg {
+    padding: 5px 0 0;
+    font-size: 1.35rem;
+
+    &[data-emergence='visible'] {
+      opacity: 1;
+      animation: bounceIn 2s;
+    }
+
+    &[data-emergence='hidden'] {
+      opacity: 0;
+    }
+  }
+
+  .twitter {
+    color: #c0deed;
+    &:hover {
+      color: #1dcaff;
+    }
+  }
+
+  .facebook {
+    color: #dfe3ee;
+    &:hover {
+      color: #3b5998;
+    }
+  }
+
+  .envelope {
+    color: #cb9c95;
+    &:hover {
+      color: #9b4747;
+    }
+  }
 }
