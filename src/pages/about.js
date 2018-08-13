@@ -52,14 +52,14 @@ class About extends React.Component {
               {' '}
               His <span className="sc">MS</span>c thesis,{' '}
               <i>
-                Literary Modeling Queer Modernity: Interpretaions and Inferences
-                of Anglo-American Queer Novels, 1860–1923
+                Literary Modeling Queer Modernity: Interpretations and
+                Inferences of Anglo-American Queer Novels, 1860–1923
               </i>{' '}
-              juxtaposes quantitative analysis derived from topic models and
-              qualitative interpretations of queer novels from late nineteenth-
-              to early twentieth-century. He has organized a study group on
-              cultural and literary text mining (which he refers to as{' '}
-              <span className="sc">CALTMIG</span>
+              (provisional title) juxtaposes quantitative analysis derived from
+              topic models and qualitative interpretations of queer novels from
+              late nineteenth- to early twentieth-century. He has organized a
+              study group on cultural and literary text mining (which he refers
+              to as <span className="sc">CALTMIG</span>
               ), where he leads seminar discussion and Python lab sessions on a
               weekly basis, to address the lack of relevant coverage in the DH
               curriculum at <span className="sc">UCL</span>.
