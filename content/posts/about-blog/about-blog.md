@@ -10,36 +10,43 @@ For some very curious reason I have had to change my blogging platform
 every now and then since I was 12 (seriously—I was tweaking pLog on my
 13th birthday), so here I am.
 
+<!--more-->
+
 It’s not like I hated all the previous platforms I used. The previous
-version of my website is basically a few static pages plus a Pelican
-blog, which is good enough for my purpose in terms of functionality. The
+version of my website was basically a few static pages plus a Pelican
+blog, which was good enough for my purpose in terms of functionality. The
 issue, it seems to me, is always appearance. I created that Pelican blog
 a year ago, and I learned Sass _after_ that. Sass is my savior, although
 it has turned the Pelican theme I edited from a hot mess to a terrifying
-hot mess. So I decided to give that up.
+hot mess. So I decided to give that up—not interested in going to all the
+efforts to make my old theme go Sassy.
 
-And for some reason, I find Pelican tiring, and out of my control. This
-doesn’t sound sensible; I guess I simply wanted to try another static
-site generator. I then found Gatsby.js, which is based on React.js.
-React, Gatsby, GraphQL—those sound much nicer than Python, Pelican,
-Anaconda, etc. to me, who studied American literature in college and
-regularly use Photoshop and Illustrator.
+And for some reason, I find Pelican tiring, and out of my control. Pelican
+is in many ways a good system, and it’s written in my favorite language.
+But I found the writing process tedious: I had to type a few commands
+which generated a Markdown file, do the writing, publish, upload, etc.
+I thought I would get used to it (that’s how static sites work), and
+90% of the things I do tend to be more complex. But the reality was
+I was reluctant to even start writing.
 
-Of course I could go analytical—Pelican is in many ways a good system,
-and it’s written in my favorite language. But I just find the writing
-process tedious. I had to type a few commands which generate a Markdown
-file, do the writing, publish, upload, etc. I thought I would get used
-to it (that’s how static sites work), and 90% of the things I do tend to
-be more complex. But the reality is I am reluctant to even start
-writing.
+True, the fact that I turned to Gatsby, which is more or less a React.js
+version of Pelican, contradicts my ranting about Pelican. I guess
+I simply wanted to try another static site generator. React, Gatsby,
+GraphQL—those sound much nicer than Python, Pelican, Anaconda, etc.
+to me, who studied American literature in college and regularly use
+Photoshop and Illustrator.
 
-Pick whatever reason you like. But as it turns out, the irony is I have
-to do more or less the same thing with Gatsby here too. Originally, I
-decided to use Contentful with Gatsby, but later gave up, not for
-technical reasons, but because I simply prefer to have a local copy of
-Markdown files, which I also used with Pelican. So, the difference is
-not really the platform. It’s me. I’m now much more comfortable with
-geeky stuff, and I’ve found smarter ways to do things. My workflow now
+I made some efforts trying to hook Gatsby up with Contentful. That was
+the plan before I somehow screwed everything up. When I started all
+over (literally), I paused a second thinking if I should actually use
+Contentful. I still prefer to have a local copy of Markdown files,
+and who knows whether Contentful would shut down some day. Markdown
+is widely supported, but Contentful is much less so, comparatively.
+And now that I’m now much more comfortable with geeky stuff, I can
+write a few Python scripts to make my life writing with Markdown
+easier. It doesn’t have to be tedious.
+
+So I ditched Contentful and embraced Markdown again. Now my workflow
 roughly looks like this:
 
 - run `gen.py` which generates `.tex` and `.md` header (front matter)
@@ -48,7 +55,7 @@ roughly looks like this:
 - write in the `.tex` file
 
 - run `md.py` to use pandoc to convert `.tex` to `.md` and then join
-  it with its header `.md` file
+  it with its header `.md` file; intermediate files are deleted
 
 - edit the combined `.md` file as I see fit
 
@@ -56,11 +63,11 @@ roughly looks like this:
 
 - let Netlify deploy it
 
-- compile the `.tex` file if there’s a need.
+- compile the `.tex` file and produce PDF if there’s a need.
 
 There’s nothing too complicated here, and since I don’t know when I will
 have time to write a tutorial of sorts, please just go ahead to my
-Github if you’re interested in how this works out.
+[Github](https://github.com/kentchang/kentchang.com-main) if you’re interested in how this works out.
 
 I think the current website looks better than the previous one. It has a
 more consistent color scheme and layout, both absent before. I will have
