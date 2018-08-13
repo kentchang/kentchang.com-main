@@ -22,7 +22,7 @@ class About extends React.Component {
             />
             <div className="button_group">
               {Button({
-                path: 'https://kentchang.com/cv.pdf',
+                path: 'https://www.kentchang.com/cv.pdf',
                 label: 'CV',
                 primary: true,
               })}
