@@ -146,7 +146,7 @@ export const pageQuery = graphql`
             title
             slug
             tags
-            date(formatString: "MMMM DD, YYYY")
+            date
           }
         }
       }

@@ -1,8 +1,9 @@
 ---
 title: 'Migrating to Gatsby.js'
-date: '2018-08-13T13:48:39.280255+01:00'
-slug: about-blog
-tags: 'misc'
+date: 'August 13, 2018 01:48:39PM (BST)'
+slug: 'about-blog'
+tags:
+  - misc
 ---
 
 For some very curious reason I have had to change my blogging platform

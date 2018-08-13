@@ -6,10 +6,11 @@ import os
 
 MARKDOWN_TEMPLATE = """
 ---
-title: {title}
-date: {date}
-slug: {slug}
-tags: {tags}
+title: \"{title}\"
+date:  \"{date}\"
+slug:  \"{slug}\"
+tags:  
+  - \"{tags}\"
 ---
 
 """

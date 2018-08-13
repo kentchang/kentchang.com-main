@@ -371,11 +371,11 @@ code {
 }
 
 .blog {
-  margin-bottom: 8rem;
   &-index {
-
+    @include wrapper_margin();
   }
   &-tag {
+    @include wrapper_margin();
     &-header {
      h1 {
       @include link();
@@ -388,6 +388,7 @@ code {
     }
   }
   &-post {
+    @include wrapper_margin();
     @include blog_components();
     .breadcrumb {
       margin: 2rem 0 0.5rem 0; // 3rem;

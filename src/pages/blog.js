@@ -88,7 +88,7 @@ class BlogIndex extends React.Component {
                     >
                       <span className="title">{title}</span>
                     </Link>
-                    {Badge({ items: tags })}
+                    {date} {Badge({ items: tags })}
                   </div>
                   <div
                     className="content"
@@ -143,7 +143,7 @@ export const pageQuery = graphql`
             title
             slug
             tags
-            date(formatString: "MMMM DD, YYYY")
+            date
           }
         }
       }
