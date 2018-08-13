@@ -64,8 +64,7 @@ class BlogIndex extends React.Component {
               <h1>Blog</h1>
               <h2>Queeries, Qualified</h2>
               <p className="lead">
-                Shameless shots for shapeless subjects. Aka{' '}
-                <code>blog.kentchang.com</code>.{' '}
+                Some shameless shots for shapeless subjects.
               </p>
             </div>
           </div>
