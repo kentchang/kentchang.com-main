@@ -5,7 +5,6 @@ import Navi from 'components/Navi'
 import Footer from 'components/Footer'
 import { siteMetadata } from '../../../gatsby-config'
 
-import 'modern-normalize/modern-normalize.css'
 import 'prismjs/themes/prism.css'
 import 'scss/gatstrap.scss'
 import 'animate.css/animate.css'

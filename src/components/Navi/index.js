@@ -7,7 +7,9 @@ class Navi extends React.Component {
     return (
       <nav
         className={
-          location.pathname === '/' || location.pathname == ''
+          location.pathname === '/' ||
+          location.pathname === '' ||
+          location.pathname === null
             ? 'navbar navbar-expand navbar-dark flex-column flex-md-row bg-transparent text-white'
             : 'navbar navbar-expand navbar-dark flex-column flex-md-row bg-primary'
         }
@@ -20,7 +22,9 @@ class Navi extends React.Component {
             <ul className="navbar-nav bd-navbar-nav flex-row">
               <li
                 className={
-                  location.pathname === '/' || location.pathname == ''
+                  location.pathname === '/' ||
+                  location.pathname === '' ||
+                  location.pathname === null
                     ? 'nav-item active'
                     : 'nav-item'
                 }
