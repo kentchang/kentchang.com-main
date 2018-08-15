@@ -62,7 +62,7 @@ class BlogIndex extends React.Component {
           <div className="blog-header">
             <div className="container">
               <h1>Blog</h1>
-              <h2>Queerables, Qualified</h2>
+              <h2>Queeriables, Qualified</h2>
               <p className="lead">My shameless shots for shapeless subjects</p>
             </div>
           </div>
