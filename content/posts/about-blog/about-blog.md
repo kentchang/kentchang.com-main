@@ -48,7 +48,7 @@ Photoshop and Illustrator.
 I made some efforts trying to hook Gatsby up with Contentful. That was
 the plan before I somehow screwed everything up. When I started all
 over (literally), I paused a second thinking if I should actually use
-Contentful. I still prefer to have a local copy of Markdown files,
+Contentful. I still prefer to have local copies of Markdown files,
 and who knows whether Contentful would shut down some day. Markdown
 is widely supported, but Contentful is much less so, comparatively.
 And now that I’m now much more comfortable with geeky stuff, I can
