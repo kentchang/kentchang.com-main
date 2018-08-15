@@ -92,5 +92,6 @@ and of course, _Crucible_. The tag line should be reminiscent of songs from that
 called _Hamilton_; ‘shameless’ is there to surface the Dionysian sense of the word.
 Titles create associations; those are the associations I want, and very effectively, I would say,
 they suggest what and how I might write. If you’re still unsure of the latter—look,
-I stuck a Wilde quote in the beginning without bothering to analyze it. That is how I’m
-intending to write here.
+I stuck a Wilde quote in the beginning without bothering to analyze it. Nor did I
+spell out the name of the author or his work in full, because I assumed you,
+my Reader, would know. That is how I’m intending to write here.
