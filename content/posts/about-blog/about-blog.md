@@ -91,6 +91,6 @@ The current title of the blog sounds like a bunch of words—queer, eerie, curab
 and of course, _Crucible_. The tag line should be reminiscent of songs from that little musical
 called _Hamilton_; ‘shameless’ is there to surface the Dionysian sense of the word.
 Titles create associations; those are the associations I want, and very effectively, I would say,
-suggest what and how I might write. If you’re still unsure of the latter—look,
+they suggest what and how I might write. If you’re still unsure of the latter—look,
 I stuck a Wilde quote in the beginning without bothering to analyze it. That is how I’m
 intending to write here.
