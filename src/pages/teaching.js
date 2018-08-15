@@ -93,7 +93,7 @@ class Teaching extends React.Component {
                   <p className="card-text">
                     {' '}
                     This is my advanced English class for my students in Taiwan,
-                    who felt stuck after having passed CEFR C2 equivalent tests.
+                    who felt stuck after having passed CEFR B2 equivalent tests.
                     My focus was extensive exposure to authentic English, unlike
                     the (traditional) test-oriented approach. I compiled a
                     reader of two volumes to structure my teaching around such
