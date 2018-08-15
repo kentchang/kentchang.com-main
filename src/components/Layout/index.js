@@ -13,10 +13,24 @@ import 'font-awesome/css/font-awesome.css'
 class Layout extends React.Component {
   componentDidMount() {
     emergence.init()
+    MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true,
+      },
+    })
   }
 
   componentDidUpdate() {
     emergence.init()
+    MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true,
+      },
+    })
   }
 
   render() {

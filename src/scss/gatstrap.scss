@@ -233,6 +233,7 @@ img {
     
 
     h2 {
+      font-size: 1.8rem;
       padding-top: 10px;
       margin-bottom: 20px;
     }
@@ -241,18 +242,35 @@ img {
       @include paragraph();
     }
 
+    ul {
+      margin: 2rem 1rem;
+    }
+
     ul > li {
-      @include paragraph();
+      font-family: $font-family-serif;
+      padding: 0;
+      margin: -0.8em;
     }
 
     code {
       font-size: 76%;
+      background: transparent;
     }
-
+    .character-speech {
+      text-indent: -2em;
+      margin-left: 2em;
+    }
     blockquote {
-      background-color: $gray-100;
-      border-left: 5px solid $gray-200;
-      padding: 0.25em 1.5em;
+      @include paragraph();
+      color: #333;
+      font-size: 1.25rem;
+      padding: 0.25em 2em;
+
+      cite {
+        font-style: normal;
+        display: block;
+        text-align: right;
+      }
 
       a {
         display: block;

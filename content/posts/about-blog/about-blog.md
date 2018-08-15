@@ -12,6 +12,13 @@ every now and then since I was 12 (seriously—I was tweaking pLog on my
 
 <!--more-->
 
+<blockquote>
+<p class="character-speech">
+<span class="sc">GWENDOLEN</span>: In matters of grave importance, style, not sincerity is the vital thing.
+</p>
+<cite>—<i>Earnest</i>, Wilde</cite>
+</blockquote>
+
 It’s not like I hated all the previous platforms I used. The previous
 version of my website was basically a few static pages plus a Pelican
 blog, which was good enough for my purpose in terms of functionality. The
@@ -30,11 +37,13 @@ I thought I would get used to it (that’s how static sites work), and
 I was reluctant to even start writing.
 
 True, the fact that I turned to Gatsby, which is more or less a React.js
-version of Pelican, contradicts my ranting about Pelican. I guess
-I simply wanted to try another static site generator. React, Gatsby,
+version of Pelican, contradicts my complaints. I guess
+I simply wanted to try another static site generator. Plus, React, Gatsby,
 GraphQL—those sound much nicer than Python, Pelican, Anaconda, etc.
 to me, who studied American literature in college and regularly use
 Photoshop and Illustrator.
+
+## Markdown to Contentful, to LaTeX to Markdown
 
 I made some efforts trying to hook Gatsby up with Contentful. That was
 the plan before I somehow screwed everything up. When I started all
@@ -63,7 +72,7 @@ roughly looks like this:
 
 - let Netlify deploy it
 
-- compile the `.tex` file and produce PDF if there’s a need.
+- compile the `.tex` file and produce <span class="sc">PDF</span> if there’s a need.
 
 There’s nothing too complicated here, and since I don’t know when I will
 have time to write a tutorial of sorts, please just go ahead to my
@@ -72,6 +81,13 @@ have time to write a tutorial of sorts, please just go ahead to my
 I think the current website looks better than the previous one. It has a
 more consistent color scheme and layout, both absent before. I will have
 to implement more components for the blog, but I guess for the time
-being it’s good enough. The background image on the landing page was
+being it’s good enough.
+
+The background image on the landing page was
 inspired by _The Marvelous Mrs. Maisel_ and I used the same font they
 used for the show for my name.
+
+The current title of the blog sounds like a bunch of words—quuer, eerie, curable,
+and of course, _Crucible_. The tag line should be reminiscent of songs from that little musical
+called _Hamilton_; ‘shameless’ is there to surface the Dionysian sense of the word.
+Those suggest what and how I might write.
