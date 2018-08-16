@@ -11,7 +11,7 @@ class Contact extends React.Component {
     const { location, data } = this.props
     return (
       <Layout location={location}>
-        <Meta site={get(data, 'site.meta')} title="About" />
+        <Meta site={get(data, 'site.meta')} title="Contact" />
         <section className="contact pt-5">
           <div className="container">
             <h1>Contact</h1>
