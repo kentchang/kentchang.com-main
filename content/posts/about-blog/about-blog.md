@@ -87,7 +87,7 @@ The background image on the landing page was
 inspired by _The Marvelous Mrs. Maisel_ and I used the same font they
 used for the show for my name.
 
-The current title of the blog sounds like a bunch of words—queer, eerie, curable,
+The current title of the blog sounds like a bunch of words—query, queer, eerie, curable,
 and of course, _Crucible_. The tag line should be reminiscent of songs from that little musical
 called _Hamilton_; ‘shameless’ is there to surface the Dionysian sense of the word.
 Titles create associations; those are the associations I want, and very effectively, I would say,
